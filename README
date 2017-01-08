@@ -1,0 +1,7 @@
+Extract the tar.gz file go to directory "Parking"
+
+To run main program-
+java -cp ./bin/ com.gojek.main.ParkingMain
+
+To tun test cases- (make sure junit and hamcrest jars are present in lib)
+java -cp ./bin:lib/hamcrest-core-1.3.jar:lib/junit-4.12.jar   org.junit.runner.JUnitCore test.TestParkingLotService
