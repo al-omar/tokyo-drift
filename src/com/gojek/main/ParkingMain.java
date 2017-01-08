@@ -19,26 +19,25 @@ public class ParkingMain {
 		
 		while((command=br.readLine())!=null){
 		String commandArgs[] = command.split(" ");
-			Action actionObj = ActionFactory.getAction(commandArgs[0]);
-			
-			if (actionObj == null)
-				break;
-			
+		String params[]=null;
 			if(commandArgs.length>1){
-				String params[]=new String[commandArgs.length-1];
+				params=new String[commandArgs.length-1];
 				for(int i=1;i<commandArgs.length;i++){
 					params[i-1]=commandArgs[i];
 					
 				}
-				actionObj.performAction(params);
+				
 			}
-			else{
-				actionObj.performAction(null);
-			}
+			parkingRequest(command, params);
 			System.out.println("");
 		}
 		
 	
 	}
-
+	public static void parkingRequest(String command, String[] params){
+		Action actionObj = ActionFactory.getAction(command);
+		if (actionObj == null)
+			return;
+		actionObj.performAction(params);
+	}
 }
