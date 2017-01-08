@@ -28,16 +28,18 @@ public class ParkingMain {
 				}
 				
 			}
-			parkingRequest(command, params);
+			parkingRequest(commandArgs[0], params);
 			System.out.println("");
 		}
 		
 	
 	}
 	public static void parkingRequest(String command, String[] params){
+		
 		Action actionObj = ActionFactory.getAction(command);
-		if (actionObj == null)
+		if (actionObj == null){
 			return;
+		}
 		actionObj.performAction(params);
 	}
 }

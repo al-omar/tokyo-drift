@@ -19,6 +19,7 @@ public class ActionFactory {
 		try{
 		pAction = ParkingActions.valueOf(action);
 		}catch(Exception e){
+			e.printStackTrace();
 			return command;
 		}
 		switch (pAction) {
